@@ -20,6 +20,12 @@ class Settings(BaseSettings):
     DB_USER: str = "diabetes_user"
     DB_PASSWORD: str = "diabetes_password"
 
+    # JWT settings
+    JWT_SECRET_KEY: str = "change-me"  # override in .env
+    JWT_ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+
+
     @property
     def DATABASE_URL(self) -> str:
         """
