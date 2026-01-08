@@ -17,3 +17,11 @@ class UserOut(BaseModel):
 
     class config:
         from_attributes = True
+
+class UserLogin(BaseModel):
+    email: EmailStr = Field(..., description="The user's email address")
+    password: str = Field(..., min_length=8, max_length=72, description="The user's password")
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
