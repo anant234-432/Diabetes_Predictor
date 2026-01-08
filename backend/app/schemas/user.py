@@ -15,7 +15,7 @@ class UserOut(BaseModel):
     id:int
     email: EmailStr
 
-    class config:
+    class Config:
         from_attributes = True
 
 class UserLogin(BaseModel):
